@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "C9879fBcRA3gPSS1jBANtAAxyFk2qTD+/9JgaByfLIL6RweAHDFOj2S0wmxZE1XxhhJmNpbVkE3b2aEM6LUJDw==",
+  "success": true,
+  "projectFilePath": "C:\\Git\\TheLastBite\\TheLastBite\\TheLastBite\\TheLastBite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jacob\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
