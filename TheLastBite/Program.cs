@@ -1,5 +1,4 @@
 ﻿using GameEngine;
-using SDL2;
 
 namespace TheLastBite
 {
@@ -9,11 +8,12 @@ namespace TheLastBite
 
         static void Main(string[] args)
         {
-            Application.Setup(Window, Renderer);
+            Application.Setup(ref Window, ref Renderer);
 
             while (true) 
             {
                 Application.HandleEvents();
+                Graphics.Render(Renderer);
             }
         }
     }

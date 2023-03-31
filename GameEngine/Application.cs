@@ -5,8 +5,7 @@ namespace GameEngine
 {
     public class Application
     {
-
-        public static void Setup(IntPtr Window, IntPtr Renderer)
+        public static void Setup(ref IntPtr Window, ref IntPtr Renderer)
         {
             SDL_WindowFlags windowFlags = SDL_WindowFlags.SDL_WINDOW_SHOWN;
             SDL_RendererFlags rendererFlags = SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC;
@@ -49,7 +48,7 @@ namespace GameEngine
             }
             else
             {
-                Console.WriteLine("Renderer created successfully!");
+                Console.WriteLine("Graphics created successfully!");
             }
         }
 
