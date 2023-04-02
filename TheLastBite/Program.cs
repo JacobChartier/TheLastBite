@@ -4,16 +4,17 @@ namespace TheLastBite
 {
     internal class Program
     {
-        public static IntPtr Window, Renderer;
 
         static void Main(string[] args)
         {
-            Application.Setup(ref Window, ref Renderer);
+            Application.Setup();
+
+            Events.KeyPressedEvent += Events.OnKeyPressed;
 
             while (true) 
             {
-                Application.HandleEvents();
-                Graphics.Render(Renderer);
+                Events.Handler();
+                Graphics.Render(Application.Renderer);
             }
         }
     }

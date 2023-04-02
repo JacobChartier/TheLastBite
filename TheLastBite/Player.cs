@@ -11,6 +11,8 @@ namespace TheLastBite
         public string name { get; private set; }
         public int health { get; set; }
         public int collectible { get; private set; }
+        public float x = 0.0f, y = 0.0f, z = 0.0f;
+
 
         public Player(string name)
         {
