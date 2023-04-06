@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine
 {
-    internal class Log
+    public class Log
     {
         static string NORMAL = Console.IsOutputRedirected ? "" : "\x1b[39m";
         static string RED = Console.IsOutputRedirected ? "" : "\x1b[91m";
@@ -22,14 +22,14 @@ namespace GameEngine
             Console.WriteLine($"{message}");
         }
 
-        internal static void Warning(string message)
+        public static void Warning(string message, string errorProvider)
         {
-            Console.WriteLine($"{YELLOW}{message}{NORMAL}");
+            Console.WriteLine($"{YELLOW}{message}\n > {errorProvider}{NORMAL}");
         }
 
-        internal static void Error(string message)
+        public static void Error(string message, string errorProvider)
         {
-            Console.WriteLine($"{RED}{message}{NORMAL}");
+            Console.WriteLine($"{RED}{message}\n > {errorProvider}{NORMAL}");
         }
     }
 }

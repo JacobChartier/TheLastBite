@@ -33,6 +33,9 @@ C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\refint\TheLastBite.d
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.pdb
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.genruntimeconfig.cache
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\ref\TheLastBite.dll
-C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\fonts\Lato-Regular.ttf
 C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\graphics\Icon.bmp
-C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\fonts\Lato-Bold.ttf
+C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\fonts\3Dventure.ttf
+C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\fonts\TheImpostor.ttf
+C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\fonts\Lato-Regular.ttf
+C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\graphics\Objects\thruster.png
+C:\Git\TheLastBite\TheLastBite\TheLastBite\bin\Debug\net6.0\assets\fonts\KongText.ttf

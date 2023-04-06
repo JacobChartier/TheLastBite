@@ -8,8 +8,22 @@ namespace GameEngine
     {
         public static IntPtr Window, Renderer;
 
-        static public IntPtr Icon = IntPtr.Zero;                                // Icon pointer
-        static public IntPtr Font_LatoRegular = IntPtr.Zero, TextImage = IntPtr.Zero;       // Font pointers
+        static public IntPtr Icon = IntPtr.Zero;
+
+        static public IntPtr
+            Font_LatoRegular = IntPtr.Zero,
+            Font_3Dventure = IntPtr.Zero, 
+            Font_TheImpostor = IntPtr.Zero, 
+            Font_TheImpostorSmall = IntPtr.Zero,
+            Font_TheImpostorSub = IntPtr.Zero,
+            Font_TheImpostorTitle = IntPtr.Zero,
+            Font_KongText = IntPtr.Zero,
+            Font_KongTextSub = IntPtr.Zero;
+
+        static public IntPtr 
+            Image_RocketThruster = IntPtr.Zero;
+
+        public const int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
 
         public static void Setup()
         {
@@ -20,7 +34,7 @@ namespace GameEngine
             #region SDL initialization
             if (SDL_Init(SDL_INIT_VIDEO) < 0)
             {
-                Log.Error($"There was an issue starting SDL!\n > {SDL_GetError()}");
+                Log.Error("There was an issue starting SDL!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -33,12 +47,12 @@ namespace GameEngine
             Window = SDL_CreateWindow(
                 "The last bite",
                 SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                1080, 620,
+                WINDOW_WIDTH, WINDOW_HEIGHT,
                 windowFlags);
 
             if (Window == IntPtr.Zero)
             {
-                Log.Error($"There was an issue creating the window!\n > {SDL_GetError()}");
+                Log.Error("There was an issue creating the window!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -50,7 +64,7 @@ namespace GameEngine
 
             if (Icon == IntPtr.Zero)
             {
-                Log.Warning($"Failed to load Icon.bmp!\n > {SDL_GetError()}");
+                Log.Warning("Failed to load Icon.bmp!", SDL_GetError());
             }
             else
             {
@@ -68,31 +82,43 @@ namespace GameEngine
 
             if (Renderer == IntPtr.Zero)
             {
-                Log.Error($"There was an issue creating the renderer!\n > {SDL_GetError()}");
+                Log.Error("There was an issue creating the renderer!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
             {
                 Log.Message("Renderer created successfully!");
             }
+
             #endregion
 
             #region SDL_image initialization + Images loading
-            if(IMG_Init(imageFlags) != (int)imageFlags)
+            if (IMG_Init(imageFlags) != (int)imageFlags)
             {
-                Log.Error($"There was an issue initializing SDL_image!\t{SDL_GetError()}");
+                Log.Error("There was an issue initializing SDL_image!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
             {
                 Log.Message("SDL_image initialized successfully!");
             }
+
+            Image_RocketThruster = IMG_LoadTexture(Renderer, "assets\\graphics\\Objects\\Thruster.png");
+
+            if (Image_RocketThruster == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load Thruster.png!", SDL_GetError());
+            }
+            else
+            {
+                Log.Message("Thruster.png loaded successfully!");
+            }
             #endregion
 
             #region SDL_ttf initialization + Fonts loading
             if(TTF_Init() < 0)
             {
-                Log.Error($"There was an issue initializing SDL_ttf!\n > {SDL_GetError()}");
+                Log.Error("There was an issue initializing SDL_ttf!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -100,22 +126,54 @@ namespace GameEngine
                 Log.Message("SDL_ttf initialized successfully!");
             }
 
-            Font_LatoRegular = TTF_OpenFont("assets\\fonts\\Lato-Bold.ttf", 30);
+            Font_LatoRegular = TTF_OpenFont("assets\\fonts\\Lato-Regular.ttf", 10);
 
             if(Font_LatoRegular == IntPtr.Zero)
             {
-                Log.Warning($"Failed to load Lato-Regular.ttf!\n > {SDL_GetError()}");
+                Log.Warning("Failed to load Lato-Regular.ttf!", SDL_GetError());
             }
             else
             {
                 Log.Message("Lato-Regular.ttf loaded successfully!");
             }
 
-            SDL_Color textColor = new SDL_Color { r = 255, g = 255, b = 255, a = 255 };
+            Font_3Dventure = TTF_OpenFont("assets\\fonts\\3Dventure.ttf", 50);
 
-            TextImage = SDL_CreateTextureFromSurface(Renderer, TTF_RenderUTF8_Blended(Font_LatoRegular, "The Last Bite", textColor));
+            if (Font_3Dventure == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load 3Dventure.ttf!", SDL_GetError());
+            }
+            else
+            {
+                Log.Message("3Dventure.ttf loaded successfully!");
+            }
+
+            Font_TheImpostor = TTF_OpenFont("assets\\fonts\\TheImpostor.ttf", 20);
+            Font_TheImpostorSmall = TTF_OpenFont("assets\\fonts\\TheImpostor.ttf", 15);
+            Font_TheImpostorSub = TTF_OpenFont("assets\\fonts\\TheImpostor.ttf", 25);
+            Font_TheImpostorTitle = TTF_OpenFont("assets\\fonts\\TheImpostor.ttf", 50);
+
+            if (Font_TheImpostor == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load TheImpostor.ttf!", SDL_GetError());
+            }
+            else
+            {
+                Log.Message("TheImpostor.ttf loaded successfully!");
+            }
+
+            Font_KongText = TTF_OpenFont("assets\\fonts\\KongText.ttf", 25);
+            Font_KongTextSub = TTF_OpenFont("assets\\fonts\\KongText.ttf", 15);
+
+            if (Font_KongText == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load KongText.ttf!", SDL_GetError());
+            }
+            else
+            {
+                Log.Message("KongText.ttf loaded successfully!");
+            }
             #endregion
-
         }
     }
 }
