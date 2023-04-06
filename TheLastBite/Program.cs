@@ -1,19 +1,32 @@
 ﻿using GameEngine;
-using SDL2;
+using GameEngine.GameElements.Characters;
+using GameEngine.UserInterface;
+using System.Reflection.Metadata.Ecma335;
 
 namespace TheLastBite
 {
     internal class Program
     {
-        public static IntPtr Window, Renderer;
-
         static void Main(string[] args)
         {
-            Application.Setup(Window, Renderer);
-
-            while (true) 
+            try
             {
-                Application.HandleEvents();
+                Application.Setup();
+
+                Inputs.KeyPressedEvent += Inputs.OnKeyPressed;
+
+                Inputs.MouseButtonDownEvent += Inputs.OnMouseButtonPressed;
+                Inputs.MouseButtonUpEvent += Inputs.OnMouseButtonReleased;
+
+                while (true)
+                {
+                    Inputs.Handler();
+                    Graphics.Render(Application.Renderer);
+                }
+            }
+            catch (Exception exception)
+            {
+                Log.Error("Fatal error occured in Main() function!", exception.Message);
             }
         }
     }
