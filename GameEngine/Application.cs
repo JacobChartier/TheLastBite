@@ -1,4 +1,5 @@
-﻿using static SDL2.SDL;
+﻿using System.Transactions;
+using static SDL2.SDL;
 using static SDL2.SDL_image;
 using static SDL2.SDL_ttf;
 
@@ -6,11 +7,16 @@ namespace GameEngine
 {
     public class Application
     {
+        public static bool ApplicationState = false;
+
         public static IntPtr Window, Renderer;
 
         static public IntPtr Icon = IntPtr.Zero;
 
         static public IntPtr
+            Font_RobotoRegular = IntPtr.Zero,
+            Font_RobotoBlack = IntPtr.Zero,
+            Font_RobotoBlackSub = IntPtr.Zero,
             Font_LatoRegular = IntPtr.Zero,
             Font_3Dventure = IntPtr.Zero, 
             Font_TheImpostor = IntPtr.Zero, 
@@ -21,15 +27,19 @@ namespace GameEngine
             Font_KongTextSub = IntPtr.Zero;
 
         static public IntPtr 
+            Image_QJJStudios = IntPtr.Zero,
+            Image_Background = IntPtr.Zero,
             Image_RocketThruster = IntPtr.Zero;
 
-        public const int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
+        static public int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
 
         public static void Setup()
         {
-            SDL_WindowFlags windowFlags = SDL_WindowFlags.SDL_WINDOW_SHOWN;
+            SDL_WindowFlags windowFlags = SDL_WindowFlags.SDL_WINDOW_SHOWN | SDL_WindowFlags.SDL_WINDOW_RESIZABLE;
             SDL_RendererFlags rendererFlags = SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC;
             IMG_InitFlags imageFlags = IMG_InitFlags.IMG_INIT_PNG | IMG_InitFlags.IMG_INIT_JPG;
+
+            ApplicationState = true;
 
             #region SDL initialization
             if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -103,7 +113,18 @@ namespace GameEngine
                 Log.Message("SDL_image initialized successfully!");
             }
 
-            Image_RocketThruster = IMG_LoadTexture(Renderer, "assets\\graphics\\Objects\\Thruster.png");
+            Image_QJJStudios = IMG_LoadTexture(Renderer, "assets\\graphics\\branding\\QJJ_Studios.png");
+
+            if(Image_QJJStudios == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load QJJ_Studios.png!", SDL_GetError());
+            }
+            else
+            {
+                Log.Message("QJJ_Studios.png loaded successfully!");
+            }
+
+            Image_RocketThruster = IMG_LoadTexture(Renderer, "assets\\graphics\\objects\\Thruster.png");
 
             if (Image_RocketThruster == IntPtr.Zero)
             {
@@ -112,6 +133,17 @@ namespace GameEngine
             else
             {
                 Log.Message("Thruster.png loaded successfully!");
+            }
+
+            Image_Background = IMG_LoadTexture(Renderer, "assets\\graphics\\Background2.png");
+
+            if (Image_Background == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load Background2.png!", SDL_GetError());
+            }
+            else
+            {
+                Log.Message("Background2.png loaded successfully!");
             }
             #endregion
 
@@ -125,6 +157,10 @@ namespace GameEngine
             {
                 Log.Message("SDL_ttf initialized successfully!");
             }
+
+            Font_RobotoRegular = TTF_OpenFont("assets\\Fonts\\Roboto-Regular.ttf", 20);
+            Font_RobotoBlack = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 35);
+            Font_RobotoBlackSub = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 20);
 
             Font_LatoRegular = TTF_OpenFont("assets\\fonts\\Lato-Regular.ttf", 10);
 
@@ -174,6 +210,35 @@ namespace GameEngine
                 Log.Message("KongText.ttf loaded successfully!");
             }
             #endregion
+        }
+
+        public static void Close()
+        {
+            ApplicationState = false;
+
+            SDL_DestroyWindow(Window);
+            SDL_DestroyRenderer(Renderer);
+
+            SDL_DestroyTexture(Icon);
+            SDL_DestroyTexture(Image_QJJStudios);
+            SDL_DestroyTexture(Image_Background);
+            SDL_DestroyTexture(Image_RocketThruster);
+
+            TTF_CloseFont(Font_RobotoRegular);
+            TTF_CloseFont(Font_RobotoBlack);
+            TTF_CloseFont(Font_RobotoBlackSub);
+            TTF_CloseFont(Font_LatoRegular);
+            TTF_CloseFont(Font_3Dventure);
+            TTF_CloseFont(Font_TheImpostor);
+            TTF_CloseFont(Font_TheImpostorSmall);
+            TTF_CloseFont(Font_TheImpostorSub);
+            TTF_CloseFont(Font_TheImpostorTitle);
+            TTF_CloseFont(Font_KongText);
+            TTF_CloseFont(Font_KongTextSub);
+
+            SDL_Quit();
+
+            Log.Message("Application is closed");
         }
     }
 }

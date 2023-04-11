@@ -17,7 +17,7 @@ namespace GameEngine
         static string CYAN = Console.IsOutputRedirected ? "" : "\x1b[96m";
         static string GREY = Console.IsOutputRedirected ? "" : "\x1b[97m";
 
-        internal static void Message(string message)
+        public static void Message(string message)
         {
             Console.WriteLine($"{message}");
         }

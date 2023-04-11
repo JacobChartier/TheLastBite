@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GameEngine.GameElements.Characters;
+using static SDL2.SDL;
 
 namespace GameEngine.GameElements.Platforms
 {
@@ -13,9 +10,14 @@ namespace GameEngine.GameElements.Platforms
         public int width { get; set; }
         public int height { get; set; }
 
-        public void Basic(int x, int y, int width, int height)
-        {
+        public SDL_Rect platform;
 
+        public void Basic(int PosX, int PosY, int width, int height)
+        {
+            platform = new SDL_Rect() { x = PosX, y = PosY, w = width, h = height };
+
+            SDL_SetRenderDrawColor(Application.Renderer, 0, 255, 0, 255);
+            SDL_RenderFillRect(Application.Renderer, ref platform);
         }
     }
 }

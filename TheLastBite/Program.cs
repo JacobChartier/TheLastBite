@@ -18,7 +18,7 @@ namespace TheLastBite
                 Inputs.MouseButtonDownEvent += Inputs.OnMouseButtonPressed;
                 Inputs.MouseButtonUpEvent += Inputs.OnMouseButtonReleased;
 
-                while (true)
+                while (Application.ApplicationState)
                 {
                     Inputs.Handler();
                     Graphics.Render(Application.Renderer);
@@ -26,7 +26,7 @@ namespace TheLastBite
             }
             catch (Exception exception)
             {
-                Log.Error("Fatal error occured in Main() function!", exception.Message);
+                Log.Error("Fatal error occured in Main(string[] args) function!", exception.Message);
             }
         }
     }

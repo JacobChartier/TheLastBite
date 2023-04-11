@@ -42,16 +42,6 @@ namespace GameEngine.UserInterface
             this.texture = CreateTexture(foreColor);
 
             Blit(this.texture, x, y);
-
-            region = new SDL_Rect() { x = (x - (margin/2) - 2), y = (y - (margin / 2) - 2), w = (width + margin), h = (height + margin) };
-
-            SDL_SetRenderDrawColor(Application.Renderer, backColor.r, backColor.g, backColor.b, backColor.a);
-            SDL_RenderFillRect(Application.Renderer, ref region);
-
-            MouseHoverAnimation(foreColor, hoverColor);
-            Clicked();
-
-            Blit(this.texture, x, y);
         }
 
         private IntPtr CreateTexture(SDL_Color foreColor)
@@ -73,6 +63,42 @@ namespace GameEngine.UserInterface
             region.h = h;
 
             SDL_RenderCopy(Application.Renderer, texture, IntPtr.Zero, ref region);
+        }
+
+        public void Show()
+        {
+            region.x = (x - (margin / 2) - 2);
+            region.y = (y - (margin / 2) - 2);
+            region.w = (width + margin);
+            region.h = (height + margin);
+
+            SDL_SetRenderDrawColor(Application.Renderer, backColor.r, backColor.g, backColor.b, backColor.a);
+            SDL_RenderFillRect(Application.Renderer, ref region);
+
+            MouseHoverAnimation(foreColor, hoverColor);
+            Clicked();
+
+            Blit(this.texture, x, y);
+        }
+
+        public void CenterX()
+        {
+            x = (Application.WINDOW_WIDTH / 2) - (width / 2);
+        }
+
+        public void CenterY()
+        {
+            y = (Application.WINDOW_HEIGHT / 2) - (height / 2);
+        }
+
+        public void MoveX(int x)
+        {
+            this.x = x;
+        }
+
+        public void MoveY(int y)
+        {
+            this.y = y;
         }
 
         public bool MouseHover()
