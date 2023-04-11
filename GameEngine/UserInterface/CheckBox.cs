@@ -46,11 +46,19 @@ namespace GameEngine.UserInterface
             innerRegion = new SDL_Rect() { x = x + margin, y = y + margin, w = width - (2 * margin), h = height - (2 * margin) };
             selectedRegion = new SDL_Rect() { x = x + (3 * margin), y = y + (3 * margin), w = width - (6 * margin), h = height - (6 * margin) };
 
-            MouseHoverAnimation(hoverColor);
         }
 
         public void CreateBox(SDL_Color borderColor, SDL_Color backColor, SDL_Color selectedColor)
         {
+            borderRegion.x = x;
+            borderRegion.y = y;
+
+            innerRegion.x = x + margin;
+            innerRegion.y = y + margin;
+
+            selectedRegion.x = x + (3 * margin);
+            selectedRegion.y = y + (3 * margin);
+
             if (state)
             {
                 SDL_SetRenderDrawColor(Application.Renderer, borderColor.r, borderColor.g, borderColor.b, borderColor.a);
@@ -95,6 +103,34 @@ namespace GameEngine.UserInterface
             {
                 return false;
             }
+        }
+
+        public void Show()
+        {
+            CreateBox(borderColor, backColor, selectedColor);
+
+            MouseHoverAnimation(hoverColor);
+            Clicked();
+        }
+
+        public void CenterX()
+        {
+            x = (Application.WINDOW_WIDTH / 2) - (width / 2);
+        }
+
+        public void CenterY()
+        {
+            y = (Application.WINDOW_HEIGHT / 2) - (height / 2);
+        }
+
+        public void MoveX(int x)
+        {
+            this.x = x;
+        }
+
+        public void MoveY(int y)
+        {
+            this.y = y;
         }
 
         private void MouseHoverAnimation(SDL_Color hoverColor)

@@ -34,13 +34,36 @@ namespace GameEngine.UserInterface
             texture = CreateTexture(foreColor);
 
             Blit(texture, x, y);
+        }
 
+        public void Show()
+        {
             region = new SDL_Rect() { x = (x - (margin / 2) - 2), y = (y - (margin / 2) - 2), w = (width + margin), h = (height + margin) };
 
             SDL_SetRenderDrawColor(Application.Renderer, backColor.r, backColor.g, backColor.b, backColor.a);
             SDL_RenderFillRect(Application.Renderer, ref region);
 
             Blit(texture, x, y);
+        }
+
+        public void CenterX()
+        {
+            x = (Application.WINDOW_WIDTH / 2) - (width / 2);
+        }
+
+        public void CenterY()
+        {
+            y = (Application.WINDOW_HEIGHT / 2) - (height / 2);
+        }
+
+        public void MoveX(int x)
+        {
+            this.x = x;
+        }
+
+        public void MoveY(int y)
+        {
+            this.y = y;
         }
 
         private IntPtr CreateTexture(SDL_Color foreColor)

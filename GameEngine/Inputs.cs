@@ -34,6 +34,7 @@ namespace GameEngine
                     {
                         case SDL_EventType.SDL_QUIT:
                             SDL_Quit();
+                            Application.Close();
                             Environment.Exit(0);
                             break;
 

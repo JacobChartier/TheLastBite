@@ -13,7 +13,7 @@ namespace GameEngine.GameElements
 
         public GameManager()
         {
-            player = new Player(10, 100, 100, 25, 25);
+            player = new Player(10, Application.WINDOW_WIDTH / 2, Application.WINDOW_HEIGHT - 100, 25, 25);
         }
     }
 }

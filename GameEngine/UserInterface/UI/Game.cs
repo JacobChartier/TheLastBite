@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameEngine.UserInterface
+namespace GameEngine.UserInterface.UI
 {
-    internal class GameUI
+    internal class Game
     {
+        public void UI()
+        {
+
+        }
     }
 }
