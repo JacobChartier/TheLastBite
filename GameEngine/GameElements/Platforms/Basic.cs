@@ -20,7 +20,7 @@ namespace GameEngine.GameElements.Platforms
         {
             hitbox = new SDL_Rect { x = x, y = y, w = width, h = height };
         }
-
+    
         public void Show()
         {
             SDL_SetRenderDrawColor(Application.Renderer, 0, 255, 0, 255);

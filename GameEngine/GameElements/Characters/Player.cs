@@ -21,7 +21,7 @@ namespace GameEngine.GameElements.Characters
         public bool falling = true;
         public int jump = 0;
         public int jumpHeight = 10;
-        public bool stopJumping = true;
+        public bool stopJumping = false;
 
         public bool collider = false;
 
@@ -58,6 +58,7 @@ namespace GameEngine.GameElements.Characters
                         break;
 
                     case SDL_Keycode.SDLK_SPACE:
+                        stopJumping = true;
                         Jump();
                         break;
                 }
@@ -79,9 +80,9 @@ namespace GameEngine.GameElements.Characters
                         velX -= VELOCITY;
                         break;
 
-                        //case SDL_Keycode.SDLK_SPACE:
-                        //    Jump();
-                        //    break;
+                    case SDL_Keycode.SDLK_SPACE:
+                        jumping = true;
+                        break;
                 }
             }
         }
@@ -155,7 +156,7 @@ namespace GameEngine.GameElements.Characters
 
         public void Jump()
         {
-            while (jumping)
+            if(jumping)
             {
                 if (jump <= jumpHeight && stopJumping)
                 {

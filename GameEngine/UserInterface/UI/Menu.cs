@@ -33,6 +33,7 @@ namespace GameEngine.UserInterface.UI
             if (button_Start.Clicked())
             {
                 Inputs.MouseLeftButtonClicked = false;
+                Audio.PlaySound(Application.Music_Click);
                 state = GameState.Game;
             }
 
@@ -42,6 +43,7 @@ namespace GameEngine.UserInterface.UI
             if (button_Settings.Clicked())
             {
                 Inputs.MouseLeftButtonClicked = false;
+                Audio.PlaySound(Application.Music_Click);
                 state = GameState.Settings;
             }
 
@@ -51,6 +53,7 @@ namespace GameEngine.UserInterface.UI
             if (button_Credit.Clicked())
             {
                 Inputs.MouseLeftButtonClicked = false;
+                Audio.PlaySound(Application.Music_Click);
                 state = GameState.Credit;
             }
         }
