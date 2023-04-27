@@ -11,12 +11,14 @@ namespace GameEngine.UserInterface.UI
     {
         public static GameManager manager = Graphics.manager;
 
+        static Label label_FPS;
+
         static Label label_Entity = new Label($"Entity : {manager.player.name}", 0, -25, Application.Font_RobotoDebug, Graphics.white, Graphics.transparent, 2);
 
         static Label label_health;
 
         static Label label_PosX;
-        static Label label_PosY;
+        static Label label_PosY; 
         static Label label_PosZ;
 
 
@@ -24,10 +26,16 @@ namespace GameEngine.UserInterface.UI
 
         public static void Show()
         {
+            label_FPS = new Label($"Frame per second : {Application.averageFPS}", 0, -25, Application.Font_RobotoDebug, Graphics.white, Graphics.gray);
+
+            label_FPS.MoveX(25);
+            label_FPS.MoveY(25);
+            label_FPS.Show();
+
             label_health = new Label($"Health : {manager.player.health}", 0, -25, Application.Font_RobotoDebug, Graphics.btn_white, Graphics.transparent, 2);
 
-            label_PosX = new Label($"X : {manager.player.position.x}", 0, -25, Application.Font_RobotoDebug, Graphics.red, Graphics.transparent, 2);
-            label_PosY = new Label($"Y : {manager.player.position.y}", 0, -25, Application.Font_RobotoDebug, Graphics.green, Graphics.transparent, 2);
+            label_PosX = new Label($"X : {Math.Round(manager.player.position.x, 2)}", 0, -25, Application.Font_RobotoDebug, Graphics.red, Graphics.transparent, 2);
+            label_PosY = new Label($"Y : {Math.Round(manager.player.position.y, 2)}", 0, -25, Application.Font_RobotoDebug, Graphics.green, Graphics.transparent, 2);
             label_PosZ = new Label($"Z : N/A", 0, -25, Application.Font_RobotoDebug, Graphics.blue, Graphics.transparent, 2);
 
             label_Entity.MoveX((int)manager.player.position.x + (manager.player.width / 2) - (label_Entity.width / 2));

@@ -17,8 +17,6 @@ namespace GameEngine.UserInterface.UI
         static Basic platform = new Basic(Application.WINDOW_WIDTH - 100, 50, 50, 50);
         static Basic platform1 = new Basic(50, 50, 50, 50);
 
-        static Button button_Pause = new Button(" I I ", 50, 50, Application.Font_RobotoBlackSub, btn_white, btn_hover, buttonBackground);
-
         static Panel panel_Controls = new Panel(250, 0, 25, 25, color);
 
         static SDL_Rect[] objects = new SDL_Rect[2];
@@ -26,13 +24,6 @@ namespace GameEngine.UserInterface.UI
         public static void Show()
         {
             SetWindowBackColor(backgroundColor);
-
-            button_Pause.Show();
-            if (button_Pause.Clicked())
-            {
-                Inputs.MouseLeftButtonClicked = false;
-                Graphics.state = GameState.Pause;
-            }
 
             manager.player.Update();
 

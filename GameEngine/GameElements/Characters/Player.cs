@@ -1,4 +1,5 @@
 ﻿using GameEngine.UserInterface;
+using GameEngine.UserInterface.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,8 @@ using static SDL2.SDL;
 
 namespace GameEngine.GameElements.Characters
 {
-    public struct playerBase
-    {
-        public int x;
-        public int y;
-    }
-
     public sealed class Player : Entity
     {
-
         public int collectible { get; private set; }
         public int width { get; private set; }
         public int height { get; private set; }
@@ -36,7 +30,7 @@ namespace GameEngine.GameElements.Characters
         public SDL_Rect hitbox, platform = new SDL_Rect { };
 
         public Player(string name, int health, Vector2D position, int width, int height) : base(name, health, position)
-        {
+        { 
             base.name = name;
             base.health = health;
             base.position.x = position.x;
@@ -54,6 +48,14 @@ namespace GameEngine.GameElements.Characters
             {
                 switch (events.key.keysym.sym)
                 {
+                    case SDL_Keycode.SDLK_ESCAPE:
+                        Graphics.state = Graphics.GameState.Pause;
+                        break;
+
+                    case SDL_Keycode.SDLK_F3:
+                        Graphics.debugMode = !Graphics.debugMode;
+                        break;
+
                     case SDL_Keycode.SDLK_a:
                         MoveX(-acceleration.x);
                         break;

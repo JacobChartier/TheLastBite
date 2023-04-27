@@ -9,10 +9,11 @@ namespace TheLastBite
     {
         static void Main(string[] args)
         {
-        Graphics gfx = new Graphics();
+            Application app = new Application();
+            Graphics gfx = new Graphics();
             try
             {
-                Application.Setup();
+                app.Setup();
 
                 Inputs.KeyPressedEvent += Inputs.OnKeyPressed;
 
@@ -22,6 +23,7 @@ namespace TheLastBite
                 while (Application.ApplicationState)
                 {
                     Inputs.Handler();
+                    app.Update();
                     gfx.Render(Application.Renderer);
                 }
             }

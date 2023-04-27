@@ -41,12 +41,19 @@ namespace GameEngine
 
         static public int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
 
-        public static void Setup()
+        public static int frames;
+        public Timer fpsTimer;
+        public static float averageFPS;
+
+        public void Setup()
         {
             SDL_WindowFlags windowFlags = SDL_WindowFlags.SDL_WINDOW_SHOWN | SDL_WindowFlags.SDL_WINDOW_RESIZABLE;
             SDL_RendererFlags rendererFlags = SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC;
             IMG_InitFlags imageFlags = IMG_InitFlags.IMG_INIT_PNG | IMG_InitFlags.IMG_INIT_JPG;
             MIX_InitFlags mixerFlags = MIX_InitFlags.MIX_INIT_MP3;
+
+            fpsTimer = new Timer();
+            fpsTimer.Start();
 
             ApplicationState = true;
 
@@ -258,16 +265,14 @@ namespace GameEngine
 
             //Audio.play(Application.Music_Menu);
             #endregion
+        }
 
-
-            if(SDL_Init(SDL_INIT_TIMER) < 0)
+        public void Update()
+        {
+            averageFPS = frames / (fpsTimer.GetTicks() / 1000.0f);
+            if (averageFPS > 2000000)
             {
-                Log.Error("There was an issue starting SDL_timer!", SDL_GetError());
-                Environment.Exit(0);
-            }
-            else
-            {
-                Log.Message("SDL_timer initialized successfully!");
+                averageFPS = 0;
             }
         }
 

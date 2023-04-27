@@ -22,6 +22,7 @@ namespace GameEngine.UserInterface
         public static SDL_Color buttonBackground = new SDL_Color { r = 15, g = 15, b = 15, a = 255 };
 
         public static SDL_Color white = new SDL_Color { r = 255, g = 255, b = 255, a = 255 };
+        public static SDL_Color gray = new SDL_Color { r = 35, g = 35, b = 35, a = 200 };
         public static SDL_Color red = new SDL_Color { r = 255, g = 0, b = 0, a = 255 };
         public static SDL_Color green = new SDL_Color { r = 0, g = 255, b = 0, a = 255 };
         public static SDL_Color blue = new SDL_Color { r = 0, g = 0, b = 255, a = 255 };
@@ -39,8 +40,8 @@ namespace GameEngine.UserInterface
 
         public static GameState state;
 
-        public float deltaTime = 0.33333f; 
-        uint mTicksCount;
+        public float deltaTime = 0.3333f; 
+
         public static bool debugMode = true;
 
         public static GameManager manager = new GameManager();
@@ -94,6 +95,8 @@ namespace GameEngine.UserInterface
             }
 
             SDL_RenderPresent(Renderer);
+
+            ++Application.frames;
         }
 
         public static void SetWindowBackColor(SDL_Color color)
