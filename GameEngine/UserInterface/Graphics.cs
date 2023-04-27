@@ -22,6 +22,10 @@ namespace GameEngine.UserInterface
         public static SDL_Color buttonBackground = new SDL_Color { r = 15, g = 15, b = 15, a = 255 };
 
         public static SDL_Color white = new SDL_Color { r = 255, g = 255, b = 255, a = 255 };
+        public static SDL_Color red = new SDL_Color { r = 255, g = 0, b = 0, a = 255 };
+        public static SDL_Color green = new SDL_Color { r = 0, g = 255, b = 0, a = 255 };
+        public static SDL_Color blue = new SDL_Color { r = 0, g = 0, b = 255, a = 255 };
+
 
         public enum GameState
         {
@@ -35,13 +39,17 @@ namespace GameEngine.UserInterface
 
         public static GameState state;
 
+        public float deltaTime = 0.33333f; 
+        uint mTicksCount;
         public static bool debugMode = true;
 
         public static GameManager manager = new GameManager();
         public static Credit credit = new Credit();
+        public Application app = new Application();
 
-        public static void Render(IntPtr Renderer)
+        public void Render(IntPtr Renderer)
         {
+
             SDL_GetWindowSize(Application.Window, out Application.WINDOW_WIDTH, out Application.WINDOW_HEIGHT);
 
             SDL_SetRenderDrawBlendMode(Application.Renderer, SDL_BlendMode.SDL_BLENDMODE_BLEND);
@@ -53,11 +61,14 @@ namespace GameEngine.UserInterface
                     break;
 
                 case GameState.Game:
+
+                    deltaTime = 0.33f;
+
                     Scene.Show();
 
                     if (debugMode)
                     {
-                        //DebugUI();
+                        Debug.Show(); ;
                     }
                     break;
 
@@ -66,7 +77,7 @@ namespace GameEngine.UserInterface
                     break;
 
                 case GameState.Credit:
-                    Credit.UI();
+                    credit.Show();
                     break;
 
                 case GameState.Loading:
@@ -74,7 +85,7 @@ namespace GameEngine.UserInterface
                     break;
 
                 case GameState.Pause:
-                    //PauseUI();
+                    Pause.Show();
                     break;
 
                 default:

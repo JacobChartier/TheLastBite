@@ -9,6 +9,7 @@ namespace TheLastBite
     {
         static void Main(string[] args)
         {
+        Graphics gfx = new Graphics();
             try
             {
                 Application.Setup();
@@ -21,12 +22,12 @@ namespace TheLastBite
                 while (Application.ApplicationState)
                 {
                     Inputs.Handler();
-                    Graphics.Render(Application.Renderer);
+                    gfx.Render(Application.Renderer);
                 }
             }
             catch (Exception exception)
             {
-                Log.Error("Fatal error occured in Main(string[] args) function!", exception.Message);
+                Log.Error("Error occured in Main(string[] args) function!", exception.Message);
             }
         }
     }

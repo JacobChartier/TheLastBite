@@ -2,11 +2,13 @@
 
 namespace GameEngine.UserInterface.UI
 {
-    internal class Settings
+    public class Settings
     {
         static byte volume = 100;
 
         static bool debugLayer = true;
+
+        public static GameState LastState { get; set; }
 
         static Label label_Title = new Label("The last bite", 0, 50, Application.Font_TheImpostorTitle, white, transparent);
         static Label label_SubTitle = new Label("S E T T I N G S", 0, 125, Application.Font_RobotoBlack, white, transparent);
@@ -85,6 +87,7 @@ namespace GameEngine.UserInterface.UI
             {
                 checkbox_DebugLayer.state = !checkbox_DebugLayer.state;
                 Inputs.MouseLeftButtonClicked = false;
+                debugMode = !debugMode;
             }
 
             checkbox_test.MoveX(((Application.WINDOW_WIDTH / 5) * 4) - (label_Other.width / 2) + 150);
@@ -100,7 +103,20 @@ namespace GameEngine.UserInterface.UI
             if (button_Back.Clicked())
             {
                 Inputs.MouseLeftButtonClicked = false;
-                state = GameState.Menu;
+                
+                switch (LastState)
+                {
+                    case GameState.Menu:
+                        state = GameState.Menu;
+                        break;
+                    case GameState.Pause:
+                        state = GameState.Pause;
+                        break;
+
+                    default:
+                        state = GameState.Menu;
+                        break;
+                }
             }
 
             button_Save.MoveY(Application.WINDOW_HEIGHT - 50);

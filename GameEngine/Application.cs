@@ -27,7 +27,8 @@ namespace GameEngine
             Font_TheImpostorSub = IntPtr.Zero,
             Font_TheImpostorTitle = IntPtr.Zero,
             Font_KongText = IntPtr.Zero,
-            Font_KongTextSub = IntPtr.Zero;
+            Font_KongTextSub = IntPtr.Zero,
+            Font_RobotoDebug = IntPtr.Zero;
 
         static public IntPtr 
             Image_QJJStudios = IntPtr.Zero,
@@ -169,6 +170,7 @@ namespace GameEngine
             Font_RobotoRegular = TTF_OpenFont("assets\\Fonts\\Roboto-Regular.ttf", 20);
             Font_RobotoBlack = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 35);
             Font_RobotoBlackSub = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 20);
+            Font_RobotoDebug = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 10);
 
             Font_LatoRegular = TTF_OpenFont("assets\\fonts\\Lato-Regular.ttf", 10);
 
@@ -256,6 +258,17 @@ namespace GameEngine
 
             //Audio.play(Application.Music_Menu);
             #endregion
+
+
+            if(SDL_Init(SDL_INIT_TIMER) < 0)
+            {
+                Log.Error("There was an issue starting SDL_timer!", SDL_GetError());
+                Environment.Exit(0);
+            }
+            else
+            {
+                Log.Message("SDL_timer initialized successfully!");
+            }
         }
 
         public static void Close()

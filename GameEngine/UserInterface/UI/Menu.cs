@@ -44,6 +44,7 @@ namespace GameEngine.UserInterface.UI
             {
                 Inputs.MouseLeftButtonClicked = false;
                 Audio.PlaySound(Application.Music_Click);
+                Settings.LastState = GameState.Menu;
                 state = GameState.Settings;
             }
 

@@ -11,9 +11,14 @@ namespace GameEngine.GameElements
     {
         public Player player { get; set; }
 
+        Vector2D spawnPoint;
+
         public GameManager()
         {
-            player = new Player(10, Application.WINDOW_WIDTH / 2, Application.WINDOW_HEIGHT - 100, 25, 25);
+            spawnPoint.x = Application.WINDOW_WIDTH / 2;
+            spawnPoint.y = Application.WINDOW_HEIGHT - 100;
+
+            player = new Player("PLAYER", 10, spawnPoint, 25, 25);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GameEngine.UserInterface.UI
 
         static Button button_Back = new Button("Go back", 50, 0, Application.Font_TheImpostor, btn_white, btn_hover, buttonBackground, 15);
 
-        public static void UI()
+        public void Show()
         {
             SetWindowBackColor(backgroundColor);
 

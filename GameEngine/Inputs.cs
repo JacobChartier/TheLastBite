@@ -22,7 +22,6 @@ namespace GameEngine
         public static event MouseButtonDelegate? MouseButtonUpEvent;
 
         public static GameManager manager = Graphics.manager;
-        public const int VELOCITY = 10;
 
         public static void Handler()
         {
@@ -76,7 +75,7 @@ namespace GameEngine
             }
             catch (Exception exception)
             {
-                Log.Error("Fatal error in the Handler() function", exception.Message);
+                Log.Error("Error in the Handler() function", exception.Message);
             }
         }
 
