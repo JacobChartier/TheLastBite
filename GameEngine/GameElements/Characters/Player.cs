@@ -2,40 +2,50 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
+using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using static SDL2.SDL;
 
 namespace GameEngine.GameElements.Characters
 {
-    public class Player
+    public struct playerBase
     {
-        public int health { get; private set; }
+        public int x;
+        public int y;
+    }
+
+    public sealed class Player : Entity
+    {
+
         public int collectible { get; private set; }
-        public int x = 0, y = 0, velX = 0, velY = 0;
         public int width { get; private set; }
         public int height { get; private set; }
 
-        public bool jumping = false;
-        public bool falling = true;
-        public int jump = 0;
-        public int jumpHeight = 10;
-        public bool stopJumping = true;
-
         public bool collider = false;
+        public bool isJumping = false;
+        
 
         public const int VELOCITY = 5;
+        public const int GRAVITY = 3;
 
         public SDL_Rect hitbox, platform = new SDL_Rect { };
 
-        public Player(int health, int x, int y, int width, int height)
+        public Player(string name, int health, Vector2D position, int width, int height) : base(name, health, position)
         {
-            this.health = health;
-            this.x = x;
-            this.y = y;
+            base.name = name;
+            base.health = health;
+            base.position.x = position.x;
+            base.position.y = position.y;
             this.width = width;
             this.height = height;
+
+            acceleration.x = 2;
+            acceleration.y = 35;
         }
 
         public void HandleInputs(SDL_Event events)
@@ -44,21 +54,15 @@ namespace GameEngine.GameElements.Characters
             {
                 switch (events.key.keysym.sym)
                 {
-                    //case SDL_Keycode.SDLK_w:
-                    //    velY -= VELOCITY;
-                    //    break;
-                    //case SDL_Keycode.SDLK_s:
-                    //    velY += VELOCITY;
-                    //    break;
                     case SDL_Keycode.SDLK_a:
-                        velX -= VELOCITY;
+                        MoveX(-acceleration.x);
                         break;
                     case SDL_Keycode.SDLK_d:
-                        velX += VELOCITY;
+                        MoveX(acceleration.x);
                         break;
 
                     case SDL_Keycode.SDLK_SPACE:
-                        Jump();
+                        MoveY(-acceleration.y);
                         break;
                 }
             }
@@ -66,30 +70,22 @@ namespace GameEngine.GameElements.Characters
             {
                 switch (events.key.keysym.sym)
                 {
-                    //case SDL_Keycode.SDLK_w:
-                    //    velY += VELOCITY;
-                    //    break;
-                    //case SDL_Keycode.SDLK_s:
-                    //    velY -= VELOCITY;
-                    //break;
                     case SDL_Keycode.SDLK_a:
-                        velX += VELOCITY;
+                        MoveX(acceleration.x);
                         break;
                     case SDL_Keycode.SDLK_d:
-                        velX -= VELOCITY;
+                        MoveX(-acceleration.x);
                         break;
-
-                        //case SDL_Keycode.SDLK_SPACE:
-                        //    Jump();
-                        //    break;
                 }
             }
         }
 
         public void Update()
         {
-            SDL_Rect hitbox = new SDL_Rect { x = x, y = y, w = width, h = height };
-            SDL_Rect player1 = new SDL_Rect { x = x + 5, y = y + 5, w = width - 10, h = height - 10 };
+            Move();
+
+            SDL_Rect hitbox = new SDL_Rect { x = (int)position.x, y = (int)position.y, w = width, h = height };
+            SDL_Rect player1 = new SDL_Rect { x = (int)position.x + 5, y = (int)position.y + 5, w = width - 10, h = height - 10 };
 
             SDL_SetRenderDrawColor(Application.Renderer, 255, 0, 0, 255);
             SDL_RenderDrawRect(Application.Renderer, ref hitbox);
@@ -98,32 +94,24 @@ namespace GameEngine.GameElements.Characters
 
         public void Move()
         {
-            x += velX;
+            position.x += velocity.x;
+            position.y += velocity.y * gfx.deltaTime;
 
-            if ((x < 0) || (x + width > Application.WINDOW_WIDTH) || collider)
+            velocity.y = velocity.y + GRAVITY * gfx.deltaTime;
+
+            if (/*(position.y < 0) || */(position.y + height >= Application.WINDOW_HEIGHT) /*|| collider*/)
             {
-                x -= velX;
-            }
-
-            y += velY;
-
-            if ((y < 0) || (y + height > Application.WINDOW_HEIGHT) || collider)
-            {
-                y -= velY;
-            }
-
-            if (!collider)
-            {
-                y += velY;
+                position.y = Application.WINDOW_HEIGHT - height;
+                velocity.y = 0;
             }
         }
 
         public bool CheckCollision(SDL_Rect rect)
         {
-            int playerLeft = x, rectLeft = rect.x;
-            int playerRight = x + width, rectRight = rect.x + rect.w;
-            int playerTop = y, rectTop = rect.y;
-            int playerBottom = y + height, rectBottom = rect.y + rect.h;
+            int playerLeft = (int)position.x, rectLeft = rect.x;
+            int playerRight = (int)position.x + width, rectRight = rect.x + rect.w;
+            int playerTop = (int)position.y, rectTop = rect.y;
+            int playerBottom = (int)position.y + height, rectBottom = rect.y + rect.h;
 
             platform.x = rect.x;
             platform.y = rect.y;
@@ -151,25 +139,6 @@ namespace GameEngine.GameElements.Characters
             }
 
             return false;
-        }
-
-        public void Jump()
-        {
-            while (jumping)
-            {
-                if (jump <= jumpHeight && stopJumping)
-                {
-                    Log.Message($"{jump}");
-                    jump++;
-                    velY -= VELOCITY;
-                }
-                else if (jump >= jumpHeight && stopJumping)
-                {
-                    stopJumping = false;
-                    jump--;
-                    velY += VELOCITY;
-                }
-            }
         }
     }
 }

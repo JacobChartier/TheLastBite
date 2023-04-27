@@ -2,6 +2,9 @@
 using static SDL2.SDL;
 using static SDL2.SDL_image;
 using static SDL2.SDL_ttf;
+using static SDL2.SDL_mixer;
+using System.Net.NetworkInformation;
+using GameEngine.GameElements.Platforms;
 
 namespace GameEngine
 {
@@ -24,12 +27,17 @@ namespace GameEngine
             Font_TheImpostorSub = IntPtr.Zero,
             Font_TheImpostorTitle = IntPtr.Zero,
             Font_KongText = IntPtr.Zero,
-            Font_KongTextSub = IntPtr.Zero;
+            Font_KongTextSub = IntPtr.Zero,
+            Font_RobotoDebug = IntPtr.Zero;
 
         static public IntPtr 
             Image_QJJStudios = IntPtr.Zero,
             Image_Background = IntPtr.Zero,
             Image_RocketThruster = IntPtr.Zero;
+
+        static public IntPtr
+            Music_Menu = IntPtr.Zero,
+            Music_Click = IntPtr.Zero;
 
         static public int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
 
@@ -38,6 +46,7 @@ namespace GameEngine
             SDL_WindowFlags windowFlags = SDL_WindowFlags.SDL_WINDOW_SHOWN | SDL_WindowFlags.SDL_WINDOW_RESIZABLE;
             SDL_RendererFlags rendererFlags = SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC;
             IMG_InitFlags imageFlags = IMG_InitFlags.IMG_INIT_PNG | IMG_InitFlags.IMG_INIT_JPG;
+            MIX_InitFlags mixerFlags = MIX_InitFlags.MIX_INIT_MP3;
 
             ApplicationState = true;
 
@@ -161,12 +170,13 @@ namespace GameEngine
             Font_RobotoRegular = TTF_OpenFont("assets\\Fonts\\Roboto-Regular.ttf", 20);
             Font_RobotoBlack = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 35);
             Font_RobotoBlackSub = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 20);
+            Font_RobotoDebug = TTF_OpenFont("assets\\Fonts\\Roboto-Black.ttf", 10);
 
             Font_LatoRegular = TTF_OpenFont("assets\\fonts\\Lato-Regular.ttf", 10);
 
             if(Font_LatoRegular == IntPtr.Zero)
             {
-                Log.Warning("Failed to load Lato-Regular.ttf!", SDL_GetError());
+                Log.Warning("Failed to load Lato-Regular.ttf!", TTF_GetError());
             }
             else
             {
@@ -210,6 +220,55 @@ namespace GameEngine
                 Log.Message("KongText.ttf loaded successfully!");
             }
             #endregion
+
+            #region SDL_mixer initialization + Sounds loading
+            Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 0, 640);
+
+            if (Mix_Init(mixerFlags) < 0)
+            {
+                Log.Error("There was an issue initializing SDL_mixer!", SDL_GetError());
+                Environment.Exit(0);
+            }
+            else
+            {
+                Log.Message("SDL_mixer initialized successfully!");
+            }
+
+            Music_Menu = Mix_LoadMUS("assets\\audio\\Menu.mp3");
+
+            if(Music_Menu == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load Menu.mp3!", Mix_GetError());
+            }
+            else
+            {
+                Log.Message("Menu.mp3 loaded successfully!");
+            }
+
+            Music_Click = Mix_LoadMUS("assets\\audio\\Click.mp3");
+
+            if(Music_Click == IntPtr.Zero)
+            {
+                Log.Warning("Failed to load Click.mp3!", Mix_GetError());
+            }
+            else
+            {
+                Log.Message("Click.mp3 loaded successfully!");
+            }
+
+            //Audio.play(Application.Music_Menu);
+            #endregion
+
+
+            if(SDL_Init(SDL_INIT_TIMER) < 0)
+            {
+                Log.Error("There was an issue starting SDL_timer!", SDL_GetError());
+                Environment.Exit(0);
+            }
+            else
+            {
+                Log.Message("SDL_timer initialized successfully!");
+            }
         }
 
         public static void Close()

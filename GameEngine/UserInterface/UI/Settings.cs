@@ -2,14 +2,22 @@
 
 namespace GameEngine.UserInterface.UI
 {
-    internal class Settings
+    public class Settings
     {
+        static byte volume = 100;
+
         static bool debugLayer = true;
+
+        public static GameState LastState { get; set; }
 
         static Label label_Title = new Label("The last bite", 0, 50, Application.Font_TheImpostorTitle, white, transparent);
         static Label label_SubTitle = new Label("S E T T I N G S", 0, 125, Application.Font_RobotoBlack, white, transparent);
 
         static Label label_Audio = new Label("Audio", 0, 250, Application.Font_RobotoBlack, white, transparent);
+        static Label label_MasterVolume = new Label($"Master volume {volume}%", 0, 300, Application.Font_RobotoRegular, white, transparent);
+        static Button button_SoundUp = new Button(" + ", 0, 300, Application.Font_RobotoBlackSub, btn_white, btn_hover, buttonBackground, 10);
+        static Button button_SoundDown = new Button(" - ", 0, 300, Application.Font_RobotoBlackSub, btn_white, btn_hover, buttonBackground, 10);
+
         static Label label_Error = new Label("No settings available", 0, 325, Application.Font_RobotoRegular, error, transparent);
 
         static Label label_Video = new Label("Video", 0, 250, Application.Font_RobotoBlack, white, transparent);
@@ -26,6 +34,7 @@ namespace GameEngine.UserInterface.UI
 
         public static void UI()
         {
+            label_MasterVolume = new Label($"Master volume {volume}%", 0, 300, Application.Font_RobotoRegular, white, transparent);
             SetWindowBackColor(backgroundColor);
 
             label_Title.CenterX();
@@ -37,8 +46,26 @@ namespace GameEngine.UserInterface.UI
             label_Audio.MoveX(((Application.WINDOW_WIDTH / 3) / 2) - (label_Audio.width / 2));
             label_Audio.Show();
 
-            label_Error.MoveX(((Application.WINDOW_WIDTH / 3) / 2) - (label_Error.width / 2));
-            label_Error.Show();
+            label_MasterVolume.MoveX(((Application.WINDOW_WIDTH / 3) / 2) - (label_Audio.width / 2) - 100);
+            label_MasterVolume.Show();
+            button_SoundUp.MoveX(((Application.WINDOW_WIDTH / 3) / 2) - (label_Audio.width / 2) + 175);
+            button_SoundUp.Show();
+            if (button_SoundUp.Clicked())
+            {
+                Inputs.MouseLeftButtonClicked = false;
+                volume++;
+                Audio.SetVolume(volume);
+                Audio.PlaySound(Application.Music_Click);
+            }
+            button_SoundDown.MoveX(((Application.WINDOW_WIDTH / 3) / 2) - (label_Audio.width / 2) + 145);
+            button_SoundDown.Show();
+            if (button_SoundDown.Clicked())
+            {
+                Inputs.MouseLeftButtonClicked = false;
+                volume--;
+                Audio.SetVolume(volume);
+                Audio.PlaySound(Application.Music_Click);
+            }
 
             label_Video.CenterX();
             label_Video.Show();
@@ -60,13 +87,14 @@ namespace GameEngine.UserInterface.UI
             {
                 checkbox_DebugLayer.state = !checkbox_DebugLayer.state;
                 Inputs.MouseLeftButtonClicked = false;
+                debugMode = !debugMode;
             }
 
             checkbox_test.MoveX(((Application.WINDOW_WIDTH / 5) * 4) - (label_Other.width / 2) + 150);
             checkbox_test.Show();
-            if (checkbox_DebugLayer.Clicked())
+            if (checkbox_test.Clicked())
             {
-                checkbox_DebugLayer.state = !checkbox_DebugLayer.state;
+                checkbox_test.state = !checkbox_test.state;
                 Inputs.MouseLeftButtonClicked = false;
             }
 
@@ -75,7 +103,20 @@ namespace GameEngine.UserInterface.UI
             if (button_Back.Clicked())
             {
                 Inputs.MouseLeftButtonClicked = false;
-                state = GameState.Menu;
+                
+                switch (LastState)
+                {
+                    case GameState.Menu:
+                        state = GameState.Menu;
+                        break;
+                    case GameState.Pause:
+                        state = GameState.Pause;
+                        break;
+
+                    default:
+                        state = GameState.Menu;
+                        break;
+                }
             }
 
             button_Save.MoveY(Application.WINDOW_HEIGHT - 50);

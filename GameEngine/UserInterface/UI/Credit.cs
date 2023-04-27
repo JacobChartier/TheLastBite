@@ -11,13 +11,13 @@ namespace GameEngine.UserInterface.UI
         static Label label_JM = new Label("Jaime Meza Uribe", 0, 275, Application.Font_RobotoBlackSub, white, transparent);
         static Label label_JC = new Label("Jacob Chartier", 0, 300, Application.Font_RobotoBlackSub, white, transparent);
 
-        static Label label_QH_Desc = new Label("???", 0, 250, Application.Font_RobotoRegular, white, transparent);
-        static Label label_JM_Desc = new Label("???", 0, 275, Application.Font_RobotoRegular, white, transparent);
+        static Label label_QH_Desc = new Label("Documentation", 0, 250, Application.Font_RobotoRegular, white, transparent);
+        static Label label_JM_Desc = new Label("Art and sound", 0, 275, Application.Font_RobotoRegular, white, transparent);
         static Label label_JC_Desc = new Label("Prototype", 0, 300, Application.Font_RobotoRegular, white, transparent);
 
         static Button button_Back = new Button("Go back", 50, 0, Application.Font_TheImpostor, btn_white, btn_hover, buttonBackground, 15);
 
-        public static void UI()
+        public void Show()
         {
             SetWindowBackColor(backgroundColor);
 
