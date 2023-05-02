@@ -15,7 +15,8 @@ namespace TheLastBite
                 Application.Setup();
 
                 Inputs.KeyPressedEvent += Inputs.OnKeyPressed;
-
+//              Inputs.KeyReleasedEvent += Inputs.OnKeyReleased;
+                
                 Inputs.MouseButtonDownEvent += Inputs.OnMouseButtonPressed;
                 Inputs.MouseButtonUpEvent += Inputs.OnMouseButtonReleased;
 
