@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "apMmlESJitwOuASV6CFAkpHj7lEgNkaxbTjA3IHvrcxor6UerIfo3QHamp59mHse4x8zExSbsFmqSTEgLjNtVQ==",
+  "dgSpecHash": "2vW7szYnquHbkhDnoQlZeqj2cIqPVwF/hmQuiCvxD6uDMMivb/q2ez11y1JN4Jy2Tjg1Jk946gjyfWz9RSpooA==",
   "success": true,
-  "projectFilePath": "C:\\Git\\TheLastBite\\TheLastBite\\GameEngine\\GameEngine.csproj",
+  "projectFilePath": "C:\\Github\\TheLastBite\\GameEngine\\GameEngine.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jacob\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
+    "C:\\Users\\Jacob Chartier\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
   ],
   "logs": []
 }

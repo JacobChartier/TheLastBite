@@ -75,7 +75,7 @@ namespace GameEngine.UserInterface.UI
             this.color.alpha = color.alpha;
 
             region.x = rectangle.x;
-            region.y = rectangle.y;
+            region.y = rectangle.y; 
             region.w = width;
             region.h = height;
         }

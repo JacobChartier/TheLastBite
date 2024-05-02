@@ -13,7 +13,8 @@ namespace GameEngine.UserInterface
     {
         public static SDL_Color backgroundColor = new SDL_Color { r = 5, g = 5, b = 5, a = 255 };
         public static SDL_Color transparent = new SDL_Color { r = 0, g = 0, b = 0, a = 0 };
-        public static SDL_Color error = new SDL_Color { r = 255, g = 0, b = 0, a = 0 };
+        public static SDL_Color error = new SDL_Color { r = 255, g = 0, b = 0, a = 255 };
+        public static Color color_red = new Color { red = 255, green = 0, blue = 0, alpha = 255 };
 
         public static SDL_Color chk_selected = new SDL_Color { r = 74, g = 243, b = 255, a = 255};
 

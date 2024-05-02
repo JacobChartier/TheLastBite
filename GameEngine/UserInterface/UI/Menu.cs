@@ -10,6 +10,7 @@ namespace GameEngine.UserInterface.UI
 {
     public class Menu
     {
+        static Panel panel = new Panel(Align.CENTERED, Align.CENTERED, 75, 502, Graphics.color_red);
         static Label label_Title = new Label("The last bite", 0, 50, Application.Font_TheImpostorTitle, white, transparent);
         static Label label_SubTitle = new Label("M A I N  M E N U", 0, 125, Application.Font_RobotoBlack, white, transparent);
 
@@ -20,6 +21,8 @@ namespace GameEngine.UserInterface.UI
         public static void UI()
         {
             SetWindowBackColor(backgroundColor);
+
+            panel.Show();
 
             label_Title.CenterX();
             label_Title.Show();

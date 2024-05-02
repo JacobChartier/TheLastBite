@@ -4,7 +4,7 @@ using static SDL2.SDL_ttf;
 namespace GameEngine.UserInterface
 {
     internal class Button
-    {
+    { 
         public string text { get; set; }
         public int x { get; set; }
         public int y { get; set; }
