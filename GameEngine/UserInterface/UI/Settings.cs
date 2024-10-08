@@ -4,7 +4,10 @@ namespace GameEngine.UserInterface.UI
 {
     public class Settings
     {
-        static byte volume = 100;
+        const byte MAX_VOLUME = 100;
+        const byte MIN_VOLUME = 0;
+
+        static byte volume = 0;
 
         static bool debugLayer = true;
 
@@ -25,6 +28,7 @@ namespace GameEngine.UserInterface.UI
         static Label label_Other = new Label("Other", 0, 250, Application.Font_RobotoBlack, white, transparent);
 
         static Label label_DebugLayer = new Label("Debug", 0, 300, Application.Font_RobotoRegular, white, transparent);
+        static Label label_Key_F1 = new Label("F1", 0, 300, Application.Font_RobotoBlackSub, white, gray, 10);
         static Label label_test = new Label("Test", 0, 325, Application.Font_RobotoRegular, white, transparent);
         static CheckBox checkbox_DebugLayer = new CheckBox(0, 300, 20, debugLayer, btn_white, backgroundColor, white, chk_selected, 2);
         static CheckBox checkbox_test = new CheckBox(0, 325, 20, debugLayer, btn_white, backgroundColor, white, chk_selected, 2);
@@ -54,7 +58,13 @@ namespace GameEngine.UserInterface.UI
             {
                 Inputs.MouseLeftButtonClicked = false;
                 volume++;
-                Audio.SetVolume(volume);
+
+                if (volume > MAX_VOLUME)
+                {
+                    volume = MAX_VOLUME;
+                }
+
+                Audio.SetMasterVolume(volume);
                 Audio.PlaySound(Application.Music_Click);
             }
             button_SoundDown.MoveX(((Application.WINDOW_WIDTH / 3) / 2) - (label_Audio.width / 2) + 145);
@@ -63,8 +73,15 @@ namespace GameEngine.UserInterface.UI
             {
                 Inputs.MouseLeftButtonClicked = false;
                 volume--;
-                Audio.SetVolume(volume);
+
+                if (volume == 255)
+                {
+                    volume = MIN_VOLUME;
+                }
+
+                Audio.SetMasterVolume(volume);
                 Audio.PlaySound(Application.Music_Click);
+
             }
 
             label_Video.CenterX();
@@ -78,6 +95,10 @@ namespace GameEngine.UserInterface.UI
 
             label_DebugLayer.MoveX(((Application.WINDOW_WIDTH / 5) * 4) - (label_Other.width / 2) - 100);
             label_DebugLayer.Show();
+
+            label_Key_F1.MoveX(((Application.WINDOW_WIDTH / 5) * 4) - (label_Other.width / 2) - 100 + label_DebugLayer.width + 15);
+            label_Key_F1.Show();
+
             label_test.MoveX(((Application.WINDOW_WIDTH / 5) * 4) - (label_Other.width / 2) - 100);
             label_test.Show();
 

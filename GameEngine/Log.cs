@@ -22,9 +22,9 @@ namespace GameEngine
             Console.WriteLine($"{YELLOW}{message}\n > {errorProvider}{NORMAL}");
         }
 
-        public static void Error(string message, string errorProvider)
+        public static void Fatal(Exception exception, string functionName)
         {
-            Console.WriteLine($"{RED}{message}\n > {errorProvider}{NORMAL}");
+            Console.WriteLine($"{RED}[{DateTime.Now}] [FATAL] An error occurred in {functionName}!\n > {exception.Message}{NORMAL}");
         }
     }
 }

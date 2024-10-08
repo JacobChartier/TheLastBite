@@ -4,10 +4,6 @@ using System.Runtime.CompilerServices;
 
 namespace GameEngine.GameElements.Characters
 {
-    public struct Vector2D
-    {
-        public float x, y;
-    }
 
     public struct Hitbox
     {
@@ -20,18 +16,18 @@ namespace GameEngine.GameElements.Characters
         Dead
     }
 
-    public abstract class Entity
+    public abstract class Entity : Math
     {
-        public Graphics gfx = new Graphics();
-        public Vector2D position, velocity, acceleration;
+        public Vector2D position, velocity, acceleration, velocityGoal;
         public Hitbox hitbox;
 
         public EntityState entityState;
 
         public string name = "Unknow";
+        public bool isOnGround;
         public int health;
 
-        private const float gravity = 5;
+        public const float GRAVITY = 0.50f, DELTA_TIME = (1.0f / 60.0f);
 
         public Entity(string name, int health, Vector2D position)
         {
@@ -39,17 +35,34 @@ namespace GameEngine.GameElements.Characters
             this.health = health;
             this.position = position;
         }
+        
+        public float LinearInterpolation(float current, float goal, float speed)
+        {
+            float difference = goal - current;
+
+            if (difference > DELTA_TIME * speed)
+            {
+                return current + (DELTA_TIME * speed);
+            }
+
+            if (difference < -(DELTA_TIME * speed))
+            {
+                return current - (DELTA_TIME * speed);
+            }
+
+            return goal;
+        }
 
         public virtual void MoveX(float movement)
         {
-            velocity.x += movement;
-            position.x += velocity.x;
+            velocityGoal.x += movement;
+            position.x += velocityGoal.x;
         }
 
         public virtual void MoveY(float movement)
         {
             velocity.y += movement;
-            position.y += velocity.y + gravity * gfx.deltaTime;
+            position.y += velocity.y * DELTA_TIME;
         }
     }
 }

@@ -43,7 +43,7 @@ namespace GameEngine
                             break;
 
                         case SDL_EventType.SDL_KEYUP:
-                            KeyPressedEvent?.Invoke(events.key.keysym);
+                            KeyReleasedEvent?.Invoke(events.key.keysym);
 
                             break;
 
@@ -75,24 +75,17 @@ namespace GameEngine
             }
             catch (Exception exception)
             {
-                Log.Error("Error in the Handler() function", exception.Message);
+                Log.Warning("Error in the Handler() function", exception.Message);
             }
         }
 
         public static void OnKeyPressed(SDL_Keysym keysym)
         {
-            if (keysym.scancode == SDL_Scancode.SDL_SCANCODE_A || keysym.scancode == SDL_Scancode.SDL_SCANCODE_LEFT)
-            {
+        }
 
-            }
-
-            if (keysym.scancode == SDL_Scancode.SDL_SCANCODE_D || keysym.scancode == SDL_Scancode.SDL_SCANCODE_RIGHT)
-            {
-            }
-
-            if (keysym.scancode == SDL_Scancode.SDL_SCANCODE_E)
-            {
-            }
+        public static void OnKeyReleased(SDL_Keysym keysym)
+        {
+            Log.Message($"Key released: {keysym.scancode}");
         }
 
         public static void OnMouseButtonPressed(SDL_MouseButtonEvent mousebtn)

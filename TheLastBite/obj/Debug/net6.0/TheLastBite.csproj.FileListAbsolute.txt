@@ -39,9 +39,10 @@ C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.Generate
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.AssemblyInfoInputs.cache
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.AssemblyInfo.cs
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.csproj.CoreCompileInputs.cache
-C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.csproj.CopyComplete
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.dll
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\refint\TheLastBite.dll
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.pdb
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.genruntimeconfig.cache
 C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\ref\TheLastBite.dll
+C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastBite.sourcelink.json
+C:\Git\TheLastBite\TheLastBite\TheLastBite\obj\Debug\net6.0\TheLastB.EC69F3CC.Up2Date

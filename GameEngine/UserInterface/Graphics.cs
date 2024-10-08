@@ -15,7 +15,7 @@ namespace GameEngine.UserInterface
         public static SDL_Color transparent = new SDL_Color { r = 0, g = 0, b = 0, a = 0 };
         public static SDL_Color error = new SDL_Color { r = 255, g = 0, b = 0, a = 0 };
 
-        public static SDL_Color chk_selected = new SDL_Color { r = 74, g = 243, b = 255, a = 255};
+        public static SDL_Color chk_selected = new SDL_Color { r = 74, g = 243, b = 255, a = 255 };
 
         public static SDL_Color btn_hover = new SDL_Color { r = 255, g = 255, b = 255, a = 255 };
         public static SDL_Color btn_white = new SDL_Color { r = 200, g = 200, b = 200, a = 255 };
@@ -40,7 +40,7 @@ namespace GameEngine.UserInterface
 
         public static GameState state;
 
-        public float deltaTime = 0.3333f; 
+        public float deltaTime, lastFrame;
 
         public static bool debugMode = true;
 
@@ -50,7 +50,6 @@ namespace GameEngine.UserInterface
 
         public void Render(IntPtr Renderer)
         {
-
             SDL_GetWindowSize(Application.Window, out Application.WINDOW_WIDTH, out Application.WINDOW_HEIGHT);
 
             SDL_SetRenderDrawBlendMode(Application.Renderer, SDL_BlendMode.SDL_BLENDMODE_BLEND);
@@ -63,7 +62,7 @@ namespace GameEngine.UserInterface
 
                 case GameState.Game:
 
-                    deltaTime = 0.33f;
+                    deltaTime = Application.averageFPS / 1000;
 
                     Scene.Show();
 
@@ -96,7 +95,16 @@ namespace GameEngine.UserInterface
 
             SDL_RenderPresent(Renderer);
 
+            uint frameTicks = Application.capFpsTimer.GetTicks();
+            if (frameTicks < Application.SCREEN_TICKS_PER_FRAME)
+            {
+                SDL_Delay(Application.SCREEN_TICKS_PER_FRAME - frameTicks);
+            }
+
             ++Application.frames;
+            lastFrame = SDL_GetTicks();
+
+            deltaTime = (SDL_GetTicks() - lastFrame) / 10000;
         }
 
         public static void SetWindowBackColor(SDL_Color color)

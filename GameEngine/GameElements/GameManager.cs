@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine.GameElements
 {
-    public class GameManager
+    public class GameManager : Math
     {
         public Player player { get; set; }
 

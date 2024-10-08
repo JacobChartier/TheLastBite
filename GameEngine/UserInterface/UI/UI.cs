@@ -19,7 +19,8 @@ namespace GameEngine.UserInterface.UI
 
     public enum Align
     {
-        CENTERED
+        CENTERED,
+        LEFT
     }
 
     public enum Direction
@@ -55,7 +56,11 @@ namespace GameEngine.UserInterface.UI
             switch (x)
             {
                 case Align.CENTERED:
-                    rectangle.x = ((Application.WINDOW_WIDTH / 2) - (width / 2));
+                    rectangle.x = (int)((Application.WINDOW_WIDTH / 2) - (width / 2));
+                    break;
+
+                case Align.LEFT:
+                    rectangle.x = (int)((Application.WINDOW_WIDTH / 5) * 100);
                     break;
             }
 

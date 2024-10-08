@@ -22,10 +22,6 @@ namespace GameEngine.GameElements.Characters
 
         public bool collider = false;
         public bool isJumping = false;
-        
-
-        public const int VELOCITY = 5;
-        public const int GRAVITY = 3;
 
         public SDL_Rect hitbox, platform = new SDL_Rect { };
 
@@ -38,8 +34,8 @@ namespace GameEngine.GameElements.Characters
             this.width = width;
             this.height = height;
 
-            acceleration.x = 2;
-            acceleration.y = 35;
+            acceleration.x = 5;
+            acceleration.y = 20;
         }
 
         public void HandleInputs(SDL_Event events)
@@ -48,23 +44,28 @@ namespace GameEngine.GameElements.Characters
             {
                 switch (events.key.keysym.sym)
                 {
-                    case SDL_Keycode.SDLK_ESCAPE:
+                    case SDL_Keycode.SDLK_ESCAPE:   // Pressed ESCAPE : Show the PAUSE menu
                         Graphics.state = Graphics.GameState.Pause;
                         break;
 
-                    case SDL_Keycode.SDLK_F3:
+                    case SDL_Keycode.SDLK_F1:       // Pressed F1 : Show the DEBUG menu
                         Graphics.debugMode = !Graphics.debugMode;
                         break;
 
-                    case SDL_Keycode.SDLK_a:
+                    case SDL_Keycode.SDLK_a:        // Pressed A : Move the player to the left on the X axis
                         MoveX(-acceleration.x);
                         break;
-                    case SDL_Keycode.SDLK_d:
+
+                    case SDL_Keycode.SDLK_d:        // Pressed D : Move the player to the right on the X axis
                         MoveX(acceleration.x);
                         break;
 
-                    case SDL_Keycode.SDLK_SPACE:
-                        MoveY(-acceleration.y);
+                    case SDL_Keycode.SDLK_SPACE:    // Pressed SPACE : Move the player up on the Y axis
+                        if (isOnGround)
+                        {
+                            MoveY(-acceleration.y);
+                            isOnGround = false;
+                        }
                         break;
                 }
             }
@@ -72,11 +73,12 @@ namespace GameEngine.GameElements.Characters
             {
                 switch (events.key.keysym.sym)
                 {
-                    case SDL_Keycode.SDLK_a:
-                        MoveX(acceleration.x);
+                    case SDL_Keycode.SDLK_a:        // Released A : Stop the player's velocity goal movement
+                        velocityGoal.x += acceleration.x;
                         break;
-                    case SDL_Keycode.SDLK_d:
-                        MoveX(-acceleration.x);
+
+                    case SDL_Keycode.SDLK_d:        // Released D : Stop the player's velocity goal movement
+                        velocityGoal.x -= acceleration.x;
                         break;
                 }
             }
@@ -84,7 +86,24 @@ namespace GameEngine.GameElements.Characters
 
         public void Update()
         {
-            Move();
+            // Interpolate the movement
+            velocity.x = LinearInterpolation(velocity.x, velocityGoal.x, 10);
+            //velocity.y = LinearInterpolation(velocity.y, velocityGoal.y, 10);
+
+            // Apply gravity to the Y axis
+            velocity.y += GRAVITY;
+
+            // Make the player move
+            position.x += velocity.x;
+            position.y += velocity.y;
+
+            if (position.y + height >= Application.WINDOW_HEIGHT)
+            {
+                position.y = Application.WINDOW_HEIGHT - height;
+                velocity.y = 0;
+
+                isOnGround = true;
+            }
 
             SDL_Rect hitbox = new SDL_Rect { x = (int)position.x, y = (int)position.y, w = width, h = height };
             SDL_Rect player1 = new SDL_Rect { x = (int)position.x + 5, y = (int)position.y + 5, w = width - 10, h = height - 10 };
@@ -92,20 +111,6 @@ namespace GameEngine.GameElements.Characters
             SDL_SetRenderDrawColor(Application.Renderer, 255, 0, 0, 255);
             SDL_RenderDrawRect(Application.Renderer, ref hitbox);
             SDL_RenderDrawRect(Application.Renderer, ref player1);
-        }
-
-        public void Move()
-        {
-            position.x += velocity.x;
-            position.y += velocity.y * gfx.deltaTime;
-
-            velocity.y = velocity.y + GRAVITY * gfx.deltaTime;
-
-            if (/*(position.y < 0) || */(position.y + height >= Application.WINDOW_HEIGHT) /*|| collider*/)
-            {
-                position.y = Application.WINDOW_HEIGHT - height;
-                velocity.y = 0;
-            }
         }
 
         public bool CheckCollision(SDL_Rect rect)

@@ -16,6 +16,7 @@ namespace TheLastBite
                 app.Setup();
 
                 Inputs.KeyPressedEvent += Inputs.OnKeyPressed;
+                Inputs.KeyReleasedEvent += Inputs.OnKeyReleased;
 
                 Inputs.MouseButtonDownEvent += Inputs.OnMouseButtonPressed;
                 Inputs.MouseButtonUpEvent += Inputs.OnMouseButtonReleased;
@@ -29,7 +30,7 @@ namespace TheLastBite
             }
             catch (Exception exception)
             {
-                Log.Error("Error occured in Main(string[] args) function!", exception.Message);
+                Log.Warning("Error occured in Main(string[] args) function!", exception.Message);
             }
         }
     }

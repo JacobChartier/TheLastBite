@@ -10,6 +10,9 @@ namespace GameEngine
 {
     public class Application
     {
+        public const int FPS_CAP = 144;
+        public const int SCREEN_TICKS_PER_FRAME = 1000 / FPS_CAP;
+
         public static bool ApplicationState = false;
 
         public static IntPtr Window, Renderer;
@@ -41,9 +44,12 @@ namespace GameEngine
 
         static public int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
 
-        public static int frames;
-        public Timer fpsTimer;
+        public static float frames;
+        public Timer fpsTimer = new Timer();
+        public static Timer capFpsTimer = new Timer();
+
         public static float averageFPS;
+        public float lastFrame;
 
         public void Setup()
         {
@@ -52,7 +58,6 @@ namespace GameEngine
             IMG_InitFlags imageFlags = IMG_InitFlags.IMG_INIT_PNG | IMG_InitFlags.IMG_INIT_JPG;
             MIX_InitFlags mixerFlags = MIX_InitFlags.MIX_INIT_MP3;
 
-            fpsTimer = new Timer();
             fpsTimer.Start();
 
             ApplicationState = true;
@@ -60,7 +65,7 @@ namespace GameEngine
             #region SDL initialization
             if (SDL_Init(SDL_INIT_VIDEO) < 0)
             {
-                Log.Error("There was an issue starting SDL!", SDL_GetError());
+                Log.Warning("There was an issue starting SDL!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -78,7 +83,7 @@ namespace GameEngine
 
             if (Window == IntPtr.Zero)
             {
-                Log.Error("There was an issue creating the window!", SDL_GetError());
+                Log.Warning("There was an issue creating the window!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -108,7 +113,7 @@ namespace GameEngine
 
             if (Renderer == IntPtr.Zero)
             {
-                Log.Error("There was an issue creating the renderer!", SDL_GetError());
+                Log.Warning("There was an issue creating the renderer!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -121,7 +126,7 @@ namespace GameEngine
             #region SDL_image initialization + Images loading
             if (IMG_Init(imageFlags) != (int)imageFlags)
             {
-                Log.Error("There was an issue initializing SDL_image!", SDL_GetError());
+                Log.Warning("There was an issue initializing SDL_image!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -166,7 +171,7 @@ namespace GameEngine
             #region SDL_ttf initialization + Fonts loading
             if(TTF_Init() < 0)
             {
-                Log.Error("There was an issue initializing SDL_ttf!", SDL_GetError());
+                Log.Warning("There was an issue initializing SDL_ttf!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -233,7 +238,7 @@ namespace GameEngine
 
             if (Mix_Init(mixerFlags) < 0)
             {
-                Log.Error("There was an issue initializing SDL_mixer!", SDL_GetError());
+                Log.Warning("There was an issue initializing SDL_mixer!", SDL_GetError());
                 Environment.Exit(0);
             }
             else
@@ -266,9 +271,11 @@ namespace GameEngine
             //Audio.play(Application.Music_Menu);
             #endregion
         }
-
+        
         public void Update()
         {
+            capFpsTimer.Start();
+
             averageFPS = frames / (fpsTimer.GetTicks() / 1000.0f);
             if (averageFPS > 2000000)
             {

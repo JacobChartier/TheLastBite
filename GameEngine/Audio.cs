@@ -15,9 +15,9 @@ namespace GameEngine
             Mix_PlayMusic(sound, 1);
         }
 
-        public static void SetVolume(int volume)
+        public static void SetMasterVolume(int volume)
         {
-            Mix_Volume(2, volume);
+            Mix_VolumeMusic(volume);
         }
     }
 }
