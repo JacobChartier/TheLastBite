@@ -69,7 +69,7 @@ namespace GameEngine.UserInterface
 
                     if (debugMode)
                     {
-                        Debug.Show(); ;
+                        Debug.Show();
                     }
                     break;
 

@@ -39,7 +39,7 @@ namespace GameEngine
             Music_Menu = IntPtr.Zero,
             Music_Click = IntPtr.Zero;
 
-        static public int WINDOW_WIDTH = 1080, WINDOW_HEIGHT = 620;
+        static public int WINDOW_WIDTH = 1920, WINDOW_HEIGHT = 1080;
 
         public static void Setup()
         {

@@ -54,3 +54,4 @@ C:\Github\TheLastBite\GameEngine\obj\Debug\net6.0\GameEngine.dll
 C:\Github\TheLastBite\GameEngine\obj\Debug\net6.0\refint\GameEngine.dll
 C:\Github\TheLastBite\GameEngine\obj\Debug\net6.0\GameEngine.pdb
 C:\Github\TheLastBite\GameEngine\obj\Debug\net6.0\ref\GameEngine.dll
+C:\Github\TheLastBite\GameEngine\obj\Debug\net6.0\GameEngine.sourcelink.json

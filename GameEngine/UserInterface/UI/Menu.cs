@@ -22,7 +22,6 @@ namespace GameEngine.UserInterface.UI
         {
             SetWindowBackColor(backgroundColor);
 
-            panel.Show();
 
             label_Title.CenterX();
             label_Title.Show();

@@ -9,7 +9,8 @@ namespace TheLastBite
     {
         static void Main(string[] args)
         {
-        Graphics gfx = new Graphics();
+            Graphics gfx = new Graphics();
+
             try
             {
                 Application.Setup();
