@@ -66,6 +66,7 @@ namespace GameEngine.UserInterface
                     deltaTime = 0.33f;
 
                     Scene.Show();
+                    Game.Show();
 
                     if (debugMode)
                     {

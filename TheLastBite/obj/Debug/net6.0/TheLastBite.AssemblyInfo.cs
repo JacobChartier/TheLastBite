@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheLastBite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b056f60aa0f43247afba78221b3ae7edea08a82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bd3ef6b0be764aa48485ec14a5ca3ac10b7ff15")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheLastBite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheLastBite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

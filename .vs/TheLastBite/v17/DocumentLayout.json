@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Github\\TheLastBite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\graphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\graphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91F0DA04-245E-4DFF-8F52-FCE7FB491E81}|TheLastBite\\TheLastBite.csproj|c:\\github\\thelastbite\\thelastbite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91F0DA04-245E-4DFF-8F52-FCE7FB491E81}|TheLastBite\\TheLastBite.csproj|solutionrelative:thelastbite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\inputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\inputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +41,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\platforms\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\platforms\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\characters\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\characters\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91F0DA04-245E-4DFF-8F52-FCE7FB491E81}|TheLastBite\\TheLastBite.csproj|c:\\github\\thelastbite\\thelastbite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91F0DA04-245E-4DFF-8F52-FCE7FB491E81}|TheLastBite\\TheLastBite.csproj|solutionrelative:thelastbite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,44 +83,12 @@
       "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\platforms\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\platforms\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\gameelements\\characters\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\gameelements\\characters\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\inputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\inputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\ui\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\ui\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|solutionrelative:gameengine\\userinterface\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{752C18F3-A42F-43D4-9ACB-28936D72485E}|GameEngine\\GameEngine.csproj|c:\\github\\thelastbite\\gameengine\\userinterface\\panel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,11 +105,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Panel.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Panel.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\Panel.cs",
@@ -114,13 +122,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "UI.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\UI.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\UI.cs",
               "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\UI.cs",
               "RelativeToolTip": "GameEngine\\UserInterface\\UI\\UI.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAABwAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-06-14T12:24:51.223Z",
               "IsPinned": true,
@@ -132,20 +140,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\GameManager.cs",
-              "RelativeDocumentMoniker": "GameEngine\\GameElements\\GameManager.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\GameManager.cs",
-              "RelativeToolTip": "GameEngine\\GameElements\\GameManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "DocumentIndex": 12,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Enemy.cs",
+              "RelativeDocumentMoniker": "GameEngine\\GameElements\\Characters\\Enemy.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Enemy.cs",
+              "RelativeToolTip": "GameEngine\\GameElements\\Characters\\Enemy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T15:18:31.709Z",
+              "WhenOpened": "2025-01-14T01:35:07.633Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Platforms\\Platform.cs",
               "RelativeDocumentMoniker": "GameEngine\\GameElements\\Platforms\\Platform.cs",
@@ -158,20 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Game.cs",
-              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Game.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Game.cs",
-              "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Game.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T17:22:23.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "Credit.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Credit.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Credit.cs",
@@ -184,46 +179,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Audio.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\Audio.cs",
-              "RelativeDocumentMoniker": "GameEngine\\Audio.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\Audio.cs",
-              "RelativeToolTip": "GameEngine\\Audio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-11T19:15:13.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Menu.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Menu.cs",
               "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Menu.cs",
               "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Menu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-06-14T12:28:50.452Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Slider.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Slider.cs",
-              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\Slider.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Slider.cs",
-              "RelativeToolTip": "GameEngine\\UserInterface\\Slider.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-06-14T12:25:59.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "Label.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Label.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\Label.cs",
@@ -231,25 +200,24 @@
               "RelativeToolTip": "GameEngine\\UserInterface\\Label.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-06-14T12:25:42.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-06-14T12:25:42.055Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Graphics.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Graphics.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\Graphics.cs",
               "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Graphics.cs",
               "RelativeToolTip": "GameEngine\\UserInterface\\Graphics.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAqwEMAAAAcAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAASwEQAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-06-14T12:25:40.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "CheckBox.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\CheckBox.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\CheckBox.cs",
@@ -257,24 +225,24 @@
               "RelativeToolTip": "GameEngine\\UserInterface\\CheckBox.cs",
               "ViewState": "AQIAAGAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-06-14T12:25:39.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-06-14T12:25:39.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 6,
               "Title": "Button.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Button.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\Button.cs",
               "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Button.cs",
               "RelativeToolTip": "GameEngine\\UserInterface\\Button.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAAUAAAAZAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAGoAAACdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-06-13T00:31:30.044Z"
+              "WhenOpened": "2023-06-13T00:31:30.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "Log.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\Log.cs",
               "RelativeDocumentMoniker": "GameEngine\\Log.cs",
@@ -282,25 +250,24 @@
               "RelativeToolTip": "GameEngine\\Log.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-05-30T17:11:20.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-05-30T17:11:20.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Application.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\Application.cs",
               "RelativeDocumentMoniker": "GameEngine\\Application.cs",
               "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\Application.cs",
               "RelativeToolTip": "GameEngine\\Application.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAqAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAA4AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-05-30T17:09:47.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\TheLastBite\\Program.cs",
               "RelativeDocumentMoniker": "TheLastBite\\Program.cs",
@@ -308,12 +275,11 @@
               "RelativeToolTip": "TheLastBite\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-05-30T17:09:47.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-05-30T17:09:47.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "Scene.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Scene.cs",
               "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Scene.cs",
@@ -321,12 +287,112 @@
               "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Scene.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAqwCQAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T15:18:11.157Z",
+              "WhenOpened": "2024-06-11T15:18:11.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Entity.cs",
+              "RelativeDocumentMoniker": "GameEngine\\GameElements\\Characters\\Entity.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Entity.cs",
+              "RelativeToolTip": "GameEngine\\GameElements\\Characters\\Entity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T02:03:08.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "Inputs.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\Inputs.cs",
+              "RelativeDocumentMoniker": "GameEngine\\Inputs.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\Inputs.cs",
+              "RelativeToolTip": "GameEngine\\Inputs.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T02:01:30.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Debug.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Debug.cs",
+              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Debug.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Debug.cs",
+              "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Debug.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-08-08T22:02:22.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Game.cs",
+              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Game.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Game.cs",
+              "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Game.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T17:22:23.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Pause.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Pause.cs",
+              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Pause.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Pause.cs",
+              "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Pause.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T01:38:52.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Slider.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Slider.cs",
+              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\Slider.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\Slider.cs",
+              "RelativeToolTip": "GameEngine\\UserInterface\\Slider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-06-14T12:25:59.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Audio.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\Audio.cs",
+              "RelativeDocumentMoniker": "GameEngine\\Audio.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\Audio.cs",
+              "RelativeToolTip": "GameEngine\\Audio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-11T19:15:13.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\GameManager.cs",
+              "RelativeDocumentMoniker": "GameEngine\\GameElements\\GameManager.cs",
+              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\GameManager.cs",
+              "RelativeToolTip": "GameEngine\\GameElements\\GameManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T15:18:31.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Player.cs",
               "RelativeDocumentMoniker": "GameEngine\\GameElements\\Characters\\Player.cs",
@@ -339,33 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Inputs.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\Inputs.cs",
-              "RelativeDocumentMoniker": "GameEngine\\Inputs.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\Inputs.cs",
-              "RelativeToolTip": "GameEngine\\Inputs.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T02:01:30.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Entity.cs",
-              "RelativeDocumentMoniker": "GameEngine\\GameElements\\Characters\\Entity.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\GameElements\\Characters\\Entity.cs",
-              "RelativeToolTip": "GameEngine\\GameElements\\Characters\\Entity.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T02:03:08.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "InputManager.cs",
               "DocumentMoniker": "C:\\Github\\RythmicSlash\\RythmicSlash\\Assets\\Scripts\\Player\\InputManager.cs",
               "RelativeDocumentMoniker": "..\\RythmicSlash\\RythmicSlash\\Assets\\Scripts\\Player\\InputManager.cs",
@@ -374,18 +414,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-10-18T20:14:00.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Debug.cs",
-              "DocumentMoniker": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Debug.cs",
-              "RelativeDocumentMoniker": "GameEngine\\UserInterface\\UI\\Debug.cs",
-              "ToolTip": "C:\\Github\\TheLastBite\\GameEngine\\UserInterface\\UI\\Debug.cs",
-              "RelativeToolTip": "GameEngine\\UserInterface\\UI\\Debug.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-08T22:02:22.35Z"
             }
           ]
         }
